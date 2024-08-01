@@ -2,6 +2,18 @@
   clear: both;
 } 
 
+a.nostyle:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a.nostyle:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
 #logo {
   aspect-ratio: 542/262;
   width: 20%;
