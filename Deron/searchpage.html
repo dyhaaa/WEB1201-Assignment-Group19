@@ -16,7 +16,13 @@
                     width=auto></a>
             <form class="searchf" action="searchpage.html" method="get" style="margin:auto;max-width:300px">
                 <button type="submit" class="searchb"><img src="search.webp" height="35px" width="auto"></i></button>
-                <input type="text" placeholder="Search.." name="search" class="searcht" required>
+                <input list="options" type="text" placeholder="Search.." name="search" class="searcht" required>
+                <datalist id="options">
+                    <option value="controller">
+                    <option value="smartphone">
+                    <option value="dress">
+                    <option value="ball">
+                </datalist>
             </form>
             <a href="main.html" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
         </div>
@@ -28,24 +34,53 @@
         </div>
     </nav>
 
-    <div class="centersearch-container">
-        <h2>Search Results</h2>
+    <div class="searchtitle-container">
+        <h2>Search Results For: <span id="searchedfor"></span></h2>
     </div>
-    <p>You searched for: <span id="searchedfor"></span></p>
+
+    <div class="searchresults-container">
+        <div class="resultitem-container">
+            <span id="result"></span>
+        </div>
+    </div>
 
     <script>
+        const items = ["Game Console Controller", "iPhone 15 Smartphone", "Floral Dress", "Basketball", "Tennis Ball"];
+
         function getQueryParam(parameter) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(parameter);
-        }
+        };
 
         function showSearch() {
-            const searchInput = getQueryParam('search');
             document.getElementById('searchedfor').textContent = searchInput;
         };
 
+        function showResults() {
+            const searchInputLower = (searchInput.trim().toLowerCase());
+            const foundItems = items.filter(item => item.toLowerCase().includes(searchInputLower));
+            const resultElement = document.getElementById('result');
+
+            if (foundItems.length > 0) {
+                foundItems.forEach(item => {
+                    const link = document.createElement('a');
+                    link.href = `https://example.com/`;
+                    link.textContent = item;
+                    resultElement.appendChild(link);
+                    resultElement.appendChild(document.createElement('br'));
+                });
+            }
+            else {
+                resultElement.textContent = "No results";
+            }
+        };
+
+        const searchInput = getQueryParam('search');
         showSearch();
+        showResults();
+
     </script>
+
 
 </body>
 

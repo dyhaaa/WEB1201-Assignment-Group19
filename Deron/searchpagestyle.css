@@ -145,13 +145,33 @@ nav:hover {
   margin-bottom: auto;
 }
 
-.centersearch-container {
+.searchtitle-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
   margin: 0;
   background-color: rgb(146, 236, 135);
+}
+
+.searchresults-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(45deg, #d58937 0%, #F1B94A 50%, #d58937 100%);
+}
+
+.resultitem-container {
+  display: inline-block;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 400px;
+  line-height: 2;
+  height: auto;
 }
 
 footer {
