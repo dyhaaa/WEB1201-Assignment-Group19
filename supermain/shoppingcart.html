@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="shoppingcart.css">
+</head>
+<body>
+    <img src="Logo.png" id="logo">
+    <nav>
+        <div id="upnav">
+            <a href="shoppingcart.html" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon" height=30px width=auto></a>
+            <form class="searchf" action="searchpage.html" style="margin:auto;max-width:300px">
+                <button type="submit" class="searchb"><img src="search.webp" height="35px" width="auto"></i></button>
+                <input type="text" placeholder="Search.." name="search" class="searcht">
+            </form>
+            <a href="main.html" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
+        </div>
+        <div id="downnav">
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Log In</a>
+            <a href="contact.html">Contact Us!</a>
+        </div>
+    </nav>
+
+
+    <!---cart items details--->
+    <div class="small-container">
+        <table>
+            <tr class="cart-item">
+                <th>Product</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Action</th>
+            </tr>
+            <tr class="cart-item">
+                <td>
+                    <div class="cart-info">
+                        <img src="myproteinpic.jpeg" alt="" class="cart-image">
+                        <a href="" class="cart-product-name">MyProtein Impact Whey Protein 1000g [Unflavoured - Vanilla - Chocolate - Strawberry - Mocha - Cookies & Cream]</a>
+                    </div>
+                </td>
+                <td class="unit-price">$50.00</td>
+                <td>
+                    <button class="minus">-</button>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button class="plus">+</button>
+                </td>
+                <td class="total-price">$50.00</td>
+                <td><a href="">Remove</a></td>
+            </tr>
+
+            <tr class="cart-item">
+                <td>
+                    <div class="cart-info">
+                        <img src="ps5%20controllers.webp" alt="" class="cart-image">
+                        <a href="" class="cart-product-name">[Ready Stock] Sony PS5 Wireless Controller Gamepad | PlayStation 5 Marvel’s Spider-Man 2 Limited Edition</a>
+                    </div>
+                </td>
+                <td class="unit-price">$75.00</td>
+                <td>
+                    <button class="minus">-</button>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button class="plus">+</button>
+                </td>
+                <td class="total-price">$75.00</td>
+                <td><a href="">Remove</a></td>
+            </tr>
+
+            <tr class="cart-item">
+                <td>
+                    <div class="cart-info">
+                        <img src="abib.webp" alt="" class="cart-image">
+                        <a href="" class="cart-product-name">Abib Heartleaf Spot Pad Calming Touch (80 Pads)</a>
+                    </div>
+                </td>
+                <td class="unit-price">$20.00</td>
+                <td>
+                    <button class="minus">-</button>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button class="plus">+</button>
+                </td>
+                <td class="total-price">$20.00</td>
+                <td><a href="">Remove</a></td>
+            </tr>
+
+            <tr class="cart-item">
+                <td>
+                    <div class="cart-info">
+                        <img src="ugreencable.webp" alt="" class="cart-image">
+                        <a href="" class="cart-product-name">UGREEN Braided MFi Lightning USB A to Lightning Cable iPhone fast charging Cable for iPhone，iPad</a>
+                    </div>
+                </td>
+                <td class="unit-price">$5.00</td>
+                <td>
+                    <button class="minus">-</button>
+                    <input type="number" class="quantity" value="1" min="1">
+                    <button class="plus">+</button>
+                </td>
+                <td class="total-price">$5.00</td>
+                <td><a href="">Remove</a></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="total-price-cart">
+        Total Price: $<span id="total-price-value">0.00</span>
+        <a href="checkout.html">
+            <button id="checkout-button">Checkout</button>
+        </a>
+    </div>
+
+
+
+    <script>//helper function to calculate the total price of a product based on its quantity and unit price
+
+        // Wait for the DOM to be fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select buttons and input fields for quantity adjustment
+            const minusButtons = document.querySelectorAll('.minus');
+            const plusButtons = document.querySelectorAll('.plus');
+            const quantityInputs = document.querySelectorAll('.quantity');
+
+            //variable that will store the checkout price value based on the quantity of each product added in the cart
+            const totalPriceValue = document.getElementById('total-price-value');
+
+            // Update the total price of a single product
+            function updateTotalPrice(quantityInput) {
+            const quantity = parseInt(quantityInput.value);
+            const unitPriceElement = quantityInput.closest('tr').querySelector('.unit-price');
+            const unitPrice = parseFloat(unitPriceElement.textContent.replace('$', ''));
+            const totalPriceElement = quantityInput.closest('tr').querySelector('.total-price');
+            const totalPrice = (unitPrice * quantity).toFixed(2);
+            totalPriceElement.textContent = `$${totalPrice}`;
+            updateCartTotalPrice();
+        }
+
+            // Update the total price of all items in the cart
+            function updateCartTotalPrice() {
+            let cartTotalPrice = 0;
+            document.querySelectorAll('.total-price').forEach(totalPriceElement => {
+            cartTotalPrice += parseFloat(totalPriceElement.textContent.replace('$', ''));
+            });
+            totalPriceValue.textContent = cartTotalPrice.toFixed(2);
+        }
+
+            // Decrease quantity when minus button is clicked
+            minusButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const quantityInput = this.nextElementSibling;
+                    if (quantityInput.value > 1) {
+                        quantityInput.value = parseInt(quantityInput.value) - 1;
+                        updateTotalPrice(quantityInput);
+                    }
+                });
+            });
+
+            // Increase quantity when plus button is clicked
+            plusButtons.forEach(button => {
+            button.addEventListener('click', function() {
+            const quantityInput = this.previousElementSibling;
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            updateTotalPrice(quantityInput);
+            });
+        });
+
+            // Update total price when quantity input value changes
+            quantityInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    if (this.value < 1) {
+                        this.value = 1;
+                    }
+                    updateTotalPrice(this);
+                });
+            });
+            // Initial calculation of the total price for the entire cart
+            updateCartTotalPrice();
+        });
+    </script>
+
+</body>
+<footer>
+    <p>&copy; 2024 ShopNGo.</p>
+    <p>All Rights Reserved</p>
+</footer>
+</html>

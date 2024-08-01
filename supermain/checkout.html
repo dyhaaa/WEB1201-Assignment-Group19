@@ -1,0 +1,98 @@
+<!-- checkout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <img src="Logo.png" id="logo">
+    <nav>
+        <div id="upnav">
+            <a href="shoppingcart.html" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon" height=30px width=auto></a>
+            <form class="searchf" action="searchpage.html" style="margin:auto;max-width:300px">
+                <button type="submit" class="searchb"><img src="search.webp" height="35px" width="auto"></i></button>
+                <input type="text" placeholder="Search.." name="search" class="searcht">
+            </form>
+            <a href="main.html" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
+        </div>
+        <div id="downnav">
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Log In</a>
+            <a href="contact.html">Contact Us!</a>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="checkout-form">
+            <h2>Shipping details</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="first-name" name="first-name" placeholder="First name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="last-name" name="last-name" placeholder="Last name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="address" name="address line 1" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="address2" name="address line 2 (optional)" placeholder="Address" optional>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <input type="text" id="city" name="city" placeholder="City" required>
+                        <input type="text" id="zip-code" name="zip-code" placeholder="ZIP code" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="country" name="country" placeholder="Country" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="phone" name="phone" placeholder="Phone (optional)">
+                </div>
+                <div class="form-group">
+                    <h3>Payment Details</h3>
+                    <div class="Card-details">
+                        <div class="form-group">
+                            <input type="text" id="card-number" name="card-number" placeholder="Card Number" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <input type="text" id="expiry-date" name="expiry-date" placeholder="Expiry Date (MM/YY)" required>
+                                <input type="text" id="security-code" name="security-code" placeholder="Security Code (CVV)" required>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Pay</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div id="cart-items">
+            </div>
+            <div class="price-container">
+                <p><span class="label">Subtotal:</span> <span class="price" id="subtotal">$500</span></p>
+                <p><span class="label">Shipping Subtotal (excl. SST):</span> <span class="price" id="tax">$10.00</span></p>
+                <p><span class="label">Shipping Fee SST:</span> <span class="price" id="shipping">$7.29</span></p>
+                <p><strong><span class="label">Total Payment:</span> <span class="price" id="order-total">$517.29</span></strong></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ShopNGo.</p>
+        <p>All Rights Reserved</p>
+    </footer>
+</body>
+</html>
