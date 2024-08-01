@@ -2,37 +2,31 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="searchpagestyle.css">
+    <link rel="stylesheet" href="searchstyle.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Page</title>
 </head>
 
 <body>
-    <img src="logo.png" alt="Logo" height="100" width=auto>
+    <img src="Logo.png" id="logo">
     <nav>
         <div id="upnav">
-            <a href="#home" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon" height=30px
-                    width=auto></a>
-            <form class="searchf" action="searchpage.html" method="get" style="margin:auto;max-width:300px">
+            <a href="shoppingcart.html" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon"
+                    height=30px width=auto></a>
+            <form class="searchf" action="searchpage.html" style="margin:auto;max-width:300px">
                 <button type="submit" class="searchb"><img src="search.webp" height="35px" width="auto"></i></button>
-                <input list="options" type="text" placeholder="Search.." name="search" class="searcht" required>
-                <datalist id="options">
-                    <option value="controller">
-                    <option value="smartphone">
-                    <option value="dress">
-                    <option value="ball">
-                </datalist>
+                <input type="text" placeholder="Search.." name="search" class="searcht">
             </form>
             <a href="main.html" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
         </div>
         <div id="downnav">
-            <a href="#sale">ON SALE!</a>
-            <a href="#food">Food</a>
-            <a href="#fashion">Fashion</a>
-            <a href="#electronics">Electronics</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Log In</a>
+            <a href="contact.html">Contact Us!</a>
         </div>
     </nav>
+
 
     <div class="searchtitle-container">
         <h2>Search Results For: <span id="searchedfor"></span></h2>
@@ -45,7 +39,7 @@
     </div>
 
     <script>
-        const items = ["Game Console Controller", "iPhone 15 Smartphone", "Floral Dress", "Basketball", "Tennis Ball"];
+        const items = ["Basketball", "Ferrari Limited Edition Tshirt", "Floral Dress", "Game Console Controller", "Gucci Luxury Bag", "iPhone 15 Smartphone", "'Megumin' Anime Minifigure", "Tennis Ball"];
 
         function getQueryParam(parameter) {
             const urlParams = new URLSearchParams(window.location.search);
