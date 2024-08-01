@@ -53,7 +53,13 @@
         };
 
         function showSearch() {
-            document.getElementById('searchedfor').textContent = searchInput;
+            if (searchInput) {
+                document.getElementById('searchedfor').textContent = searchInput;
+            }
+            else {
+                document.getElementById('searchedfor').textContent = "-";
+            }
+
         };
 
         function showResults() {
