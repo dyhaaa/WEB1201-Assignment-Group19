@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainstyle.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title> 
@@ -10,18 +10,17 @@
     <img src="Logo.png" id="logo">
     <nav>
         <div id="upnav">
-            <a href="#home" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon" height=30px width=auto></a>
-            <form class="searchf" action="/action.php" style="margin:auto;max-width:300px">
+            <a href="shoppingcart.html" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon" height=30px width=auto></a>
+            <form class="searchf" action="searchpage.html" style="margin:auto;max-width:300px">
                 <button type="submit" class="searchb"><img src="search.webp" height="35px" width="auto"></i></button>
                 <input type="text" placeholder="Search.." name="search" class="searcht">
             </form>
-            <a href="#home" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
+            <a href="main.html" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
         </div>
         <div id="downnav">
-            <a href="#sale">ON SALE!</a>
-            <a href="#food">Food</a>
-            <a href="#fashion">Fashion</a>
-            <a href="#electronics">Electronics</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Log In</a>
+            <a href="contact.html">Contact Us!</a>
         </div>
     </nav>
 
@@ -31,33 +30,54 @@
         <div class="saleitems-container">
             <div class="saleitems">
                 <img src="controller.jpg">
-                <h1> RM20 <s style="font-size: 1rem; color: #666">RM200</s></h1>
+                <h1> RM20 <s style="font-size: 1rem; color: #ff0000">RM200</s></h1>
             </div>
             <div class="saleitems">
                 <img src="controller.jpg">
-                <h1> RM30 <s style="font-size: 1rem; color: #666;">RM40</s></h1>
+                <h1> RM30 <s style="font-size: 1rem; color: #ff0000;">RM40</s></h1>
             </div>
             <div class="saleitems">
                 <img src="controller.jpg">
-                <h1> RM50 <s style="font-size: 1rem; color: #666">RM100</s></h1>
+                <h1> RM50 <s style="font-size: 1rem; color: #ff0000">RM100</s></h1>
             </div>
         </div>
         <div class="salebot"><h1>&nbsp;</h1></div>
     </div>
 
-    <div class="title-container" style="width: 40%;"><h2>Browse Categories</h2></div> <br class="clear">
+    <div class="title-container" style="width: 40%; margin-bottom: 0;"><h2>Browse Categories</h2></div> <br class="clear">
     <div id="category-container">
         <div class="container">
             <img src="dress.jpg">
-            <!-- <h1 class="ctext">Fashion</h1> -->
+            <h1 class="ctext">Fashion  </h1>
         </div>
-        <div class="container"><img src="iphone.bmp"></div>
-        <div class="container"><img src="rice cooker.webp"></div>
-        <div class="container"><img src="Gaming.bmp"></div>
-        <div class="container"><img src="furniture.bmp"></div>
-        <div class="container"><img src="sports.bmp"></div>
-        <div class="container"><img src="toys.bmp"></div>
-        <div class="container"><img src="makeup.bmp"></div>
+        <div class="container">
+            <img src="iphone.bmp">
+            <h1 class="ctext">Gadgets  </h1>
+        </div>
+        <div class="container">
+            <img src="rice cooker.webp">
+            <h1 class="ctext">Home<br>Appliances  </h1>
+        </div>
+        <div class="container">
+            <img src="Gaming.bmp">
+            <h1 class="ctext">Gaming  </h1>
+        </div>
+        <div class="container">
+            <img src="furniture.bmp">
+            <h1 class="ctext">Furniture  </h1>
+        </div>
+        <div class="container">
+            <img src="sports.bmp">
+            <h1 class="ctext">Sports  </h1>
+        </div>
+        <div class="container">
+            <img src="toys.bmp">
+            <h1 class="ctext">Kids Toys  </h1>
+        </div>
+        <div class="container">
+            <img src="makeup.bmp">
+            <h1 class="ctext">Makeup  </h1>
+        </div>
     </div>
 
     <footer>
