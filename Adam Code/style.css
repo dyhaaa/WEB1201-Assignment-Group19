@@ -62,6 +62,7 @@ nav{
     background: linear-gradient(180deg, #614DE5 0%, rgb(58, 36, 109) 100%);
     padding: 5px;
     position: sticky;
+    z-index: 4;
 
 }
 
@@ -79,7 +80,25 @@ nav{
     height: 100%;
   }
 
-#downnav {
+  #downnav {
+    background-color: #F1B94A;
+    height: 60px;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    position: sticky;
+    margin-top: -55px;
+    padding-bottom: 10px;
+    z-index: 3;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+nav:hover{
+  #downnav {
+    margin-top: 0;
     background-color: #F1B94A;
     height: 60px;
     width: 100%;
@@ -87,12 +106,15 @@ nav{
     text-align: center;
     position: sticky;
   }
+}
+
+
   
 #downnav a {
   background-color: rgb(146, 236, 135);
     color: #340e41;
     text-align: center;
-    padding: 7px 7px;
+    padding: 2px 2px;
     margin-left: 1%;
     margin-right: 1%;
     text-decoration: none;
@@ -139,6 +161,7 @@ nav{
   align-items: center;
   border-radius: 0px 10px 10px 0px;
   font-size: 0.8rem;
+  z-index: 2;
 }
 
 .saletop{
@@ -160,11 +183,8 @@ nav{
   white-space: nowrap;
 }
 
-.saleitems img{
-  width: 100%;
-}
 .saleitems {
-  background-color: #2196F3;
+  background-color: rgb(146, 236, 135);
   border-radius: 10px 10px;
   min-width: 210px;
   width: 15%;
@@ -173,6 +193,14 @@ nav{
   overflow: hidden;
   margin-left: 3%;
   margin-right: 3%;
+}
+.saleitems img{
+  width: 100%;
+}
+.saleitems h1{
+  text-align: left;
+  font-size: 1.5rem;
+  color: darkgreen;
 }
 
 #category-container{
@@ -188,6 +216,8 @@ nav{
   justify-items: center;
   align-content: center;
   justify-content: center;
+  position: relative;
+  z-index: -1;
 }
  
 .container{
@@ -195,12 +225,22 @@ nav{
   width: 20%;
   min-width: 200px;
   margin: 2%;
-
+  text-align: center;
+  position: relative;
 }
 .container img{
   object-fit: contain;
   width: 100%;
   aspect-ratio: 1/1;
+}
+
+.ctext {
+  z-index: 1;
+  font-size: 500%;
+  top: 30%;
+  left: 18%;
+  position: absolute;
+  background-color: red;
 }
 
 footer {
