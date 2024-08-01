@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+</head>
+
+<body>
+    <img src="logo.png" alt="Logo" height="100" width=auto>
+    <nav>
+        <div id="upnav">
+            <a href="#home" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon" height=30px
+                    width=auto></a>
+            <form class="searchf" action="/action.php" style="margin:auto;max-width:300px">
+                <button type="submit" class="searchb"><img src="search.webp" height="35px" width="auto"></i></button>
+                <input type="text" placeholder="Search.." name="search" class="searcht">
+            </form>
+            <a href="#home" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
+        </div>
+        <div id="downnav">
+            <a href="#sale">ON SALE!</a>
+            <a href="#food">Food</a>
+            <a href="#fashion">Fashion</a>
+            <a href="#electronics">Electronics</a>
+        </div>
+    </nav>
+
+    <div class="centersearch-container">
+        <h2>Search Results</h2>
+    </div>
+    <p>You searched for: <span id="displayQuery"></span></p>
+</body>
+
+</html>
