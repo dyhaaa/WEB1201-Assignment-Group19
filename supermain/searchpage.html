@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="searchstyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+</head>
+
+<body>
+    <img src="Logo.png" id="logo">
+    <nav>
+        <div id="upnav">
+            <a href="shoppingcart.html" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon"
+                    height=30px width=auto></a>
+            <form class="searchf" action="searchpage.html" style="margin:auto;max-width:300px">
+                <button type="submit" class="searchb"><img src="search.webp" height="35px" width="auto"></i></button>
+                <input type="text" placeholder="Search.." name="search" class="searcht">
+            </form>
+            <a href="main.html" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
+        </div>
+        <div id="downnav">
+            <a href="signup.html">Sign Up</a>
+            <a href="login.html">Log In</a>
+            <a href="contact.html">Contact Us!</a>
+        </div>
+    </nav>
+
+
+    <div class="searchtitle-container">
+        <h2>Search Results For: <span id="searchedfor"></span></h2>
+    </div>
+
+    <div class="searchresults-container">
+        <div class="resultitem-container">
+            <span id="result"></span>
+        </div>
+    </div>
+
+    <script>
+        const items = ["Basketball", "Ferrari Limited Edition Tshirt", "Floral Dress", "Game Console Controller", "Gucci Luxury Bag", "iPhone 15 Smartphone", "'Megumin' Anime Minifigure", "Tennis Ball"];
+
+        function getQueryParam(parameter) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(parameter);
+        };
+
+        function showSearch() {
+            if (searchInput) {
+                document.getElementById('searchedfor').textContent = searchInput;
+            }
+            else {
+                document.getElementById('searchedfor').textContent = "-";
+            }
+
+        };
+
+        function showResults() {
+            const searchInputLower = (searchInput.trim().toLowerCase());
+            const foundItems = items.filter(item => item.toLowerCase().includes(searchInputLower));
+            const resultElement = document.getElementById('result');
+
+            if (foundItems.length > 0) {
+                foundItems.forEach(item => {
+                    const link = document.createElement('a');
+                    link.href = `https://example.com/`;
+                    link.textContent = item;
+                    resultElement.appendChild(link);
+                    resultElement.appendChild(document.createElement('br'));
+                });
+            }
+            else {
+                resultElement.textContent = "No results";
+            }
+        };
+
+        const searchInput = getQueryParam('search');
+        showSearch();
+        showResults();
+
+    </script>
+
+
+</body>
+
+</html>
