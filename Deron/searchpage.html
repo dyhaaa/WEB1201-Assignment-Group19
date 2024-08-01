@@ -14,11 +14,11 @@
         <div id="upnav">
             <a href="#home" style="float: right; margin-left: 20px;"><img src="cart.png" alt="Cart icon" height=30px
                     width=auto></a>
-            <form class="searchf" action="/action.php" style="margin:auto;max-width:300px">
+            <form class="searchf" action="searchpage.html" method="get" style="margin:auto;max-width:300px">
                 <button type="submit" class="searchb"><img src="search.webp" height="35px" width="auto"></i></button>
-                <input type="text" placeholder="Search.." name="search" class="searcht">
+                <input type="text" placeholder="Search.." name="search" class="searcht" required>
             </form>
-            <a href="#home" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
+            <a href="main.html" style="float: left;"><img src="home.png" alt="Home icon" height=30px width=auto></a>
         </div>
         <div id="downnav">
             <a href="#sale">ON SALE!</a>
@@ -31,7 +31,22 @@
     <div class="centersearch-container">
         <h2>Search Results</h2>
     </div>
-    <p>You searched for: <span id="displayQuery"></span></p>
+    <p>You searched for: <span id="searchedfor"></span></p>
+
+    <script>
+        function getQueryParam(parameter) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(parameter);
+        }
+
+        function showSearch() {
+            const searchInput = getQueryParam('search');
+            document.getElementById('searchedfor').textContent = searchInput;
+        };
+
+        showSearch();
+    </script>
+
 </body>
 
 </html>
